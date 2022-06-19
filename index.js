@@ -11,6 +11,7 @@ document.querySelector("#add-btn").addEventListener("click", function () {
     0,
     textarea.selectionStart
   )}** ${selection}**${textarea.value.substring(textarea.selectionEnd)}`;
+  textarea.focus();
 });
 // when user click the italic button, add a textarea's selected content _ _ sign
 document.querySelector("#italic-btn").addEventListener("click", function () {
@@ -23,6 +24,7 @@ document.querySelector("#italic-btn").addEventListener("click", function () {
     0,
     textarea.selectionStart
   )}* ${selection}*${textarea.value.substring(textarea.selectionEnd)}`;
+  textarea.focus();
 });
 // when user click the underline button, add a textarea's selected content __ __ sign
 document.getElementById("underline-btn").addEventListener("click", function () {
@@ -37,6 +39,7 @@ document.getElementById("underline-btn").addEventListener("click", function () {
     selection +
     "__" +
     textarea.value.substring(textarea.selectionEnd);
+  textarea.focus();
 });
 // when user click the add-img-btn, add a textarea's selected content ![](img)
 document.getElementById("add-img-btn").addEventListener("click", function () {
@@ -51,8 +54,10 @@ document.getElementById("add-img-btn").addEventListener("click", function () {
     selection +
     "](img-url)" +
     textarea.value.substring(textarea.selectionEnd);
+  textarea.focus();
 });
-// when user click the add-link-btn, add a textarea's selected content [](link)
+
+// when user click the add-link-btn, add a textarea's selected content [](link) and focus on the link
 document.getElementById("add-link-btn").addEventListener("click", function () {
   var textarea = document.getElementById("textarea");
   var selection = textarea.value.substring(
@@ -63,8 +68,9 @@ document.getElementById("add-link-btn").addEventListener("click", function () {
     textarea.value.substring(0, textarea.selectionStart) +
     "[link-description" +
     selection +
-    "](link-url)" +
+    " ](link-url)" +
     textarea.value.substring(textarea.selectionEnd);
+  textarea.focus();
 });
 
 form.addEventListener("submit", function (e) {
