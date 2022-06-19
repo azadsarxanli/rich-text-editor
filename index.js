@@ -1,5 +1,72 @@
 var form = document.querySelector("form");
 var textarea = document.querySelector("#textarea");
+//when user click the bold button, add a textarea's selected content ** ** sign
+document.querySelector("#add-btn").addEventListener("click", function () {
+  var textarea = document.querySelector("#textarea");
+  var selection = textarea.value.substring(
+    textarea.selectionStart,
+    textarea.selectionEnd
+  );
+  textarea.value = `${textarea.value.substring(
+    0,
+    textarea.selectionStart
+  )}**${selection}**${textarea.value.substring(textarea.selectionEnd)}`;
+});
+// when user click the italic button, add a textarea's selected content _ _ sign
+document.querySelector("#italic-btn").addEventListener("click", function () {
+  var textarea = document.querySelector("#textarea");
+  var selection = textarea.value.substring(
+    textarea.selectionStart,
+    textarea.selectionEnd
+  );
+  textarea.value = `${textarea.value.substring(
+    0,
+    textarea.selectionStart
+  )}*${selection}*${textarea.value.substring(textarea.selectionEnd)}`;
+});
+// when user click the underline button, add a textarea's selected content __ __ sign
+document.getElementById("underline-btn").addEventListener("click", function () {
+  var textarea = document.getElementById("textarea");
+  var selection = textarea.value.substring(
+    textarea.selectionStart,
+    textarea.selectionEnd
+  );
+  textarea.value =
+    textarea.value.substring(0, textarea.selectionStart) +
+    "__" +
+    selection +
+    "__" +
+    textarea.value.substring(textarea.selectionEnd);
+});
+// when user click the add-img-btn, add a textarea's selected content ![](img)
+document.getElementById("add-img-btn").addEventListener("click", function () {
+  var textarea = document.getElementById("textarea");
+  var selection = textarea.value.substring(
+    textarea.selectionStart,
+    textarea.selectionEnd
+  );
+  textarea.value =
+    textarea.value.substring(0, textarea.selectionStart) +
+    "![" +
+    selection +
+    "](img-url)" +
+    textarea.value.substring(textarea.selectionEnd);
+});
+// when user click the add-link-btn, add a textarea's selected content [](link)
+document.getElementById("add-link-btn").addEventListener("click", function () {
+  var textarea = document.getElementById("textarea");
+  var selection = textarea.value.substring(
+    textarea.selectionStart,
+    textarea.selectionEnd
+  );
+  textarea.value =
+    textarea.value.substring(0, textarea.selectionStart) +
+    "[link-description" +
+    selection +
+    "](link-url)" +
+    textarea.value.substring(textarea.selectionEnd);
+});
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   var name = document.querySelector("#textarea").value;
