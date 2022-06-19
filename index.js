@@ -10,7 +10,7 @@ document.querySelector("#add-btn").addEventListener("click", function () {
   textarea.value = `${textarea.value.substring(
     0,
     textarea.selectionStart
-  )}**${selection}**${textarea.value.substring(textarea.selectionEnd)}`;
+  )}** ${selection}**${textarea.value.substring(textarea.selectionEnd)}`;
 });
 // when user click the italic button, add a textarea's selected content _ _ sign
 document.querySelector("#italic-btn").addEventListener("click", function () {
@@ -22,7 +22,7 @@ document.querySelector("#italic-btn").addEventListener("click", function () {
   textarea.value = `${textarea.value.substring(
     0,
     textarea.selectionStart
-  )}*${selection}*${textarea.value.substring(textarea.selectionEnd)}`;
+  )}* ${selection}*${textarea.value.substring(textarea.selectionEnd)}`;
 });
 // when user click the underline button, add a textarea's selected content __ __ sign
 document.getElementById("underline-btn").addEventListener("click", function () {
@@ -33,7 +33,7 @@ document.getElementById("underline-btn").addEventListener("click", function () {
   );
   textarea.value =
     textarea.value.substring(0, textarea.selectionStart) +
-    "__" +
+    "__ " +
     selection +
     "__" +
     textarea.value.substring(textarea.selectionEnd);
@@ -47,7 +47,7 @@ document.getElementById("add-img-btn").addEventListener("click", function () {
   );
   textarea.value =
     textarea.value.substring(0, textarea.selectionStart) +
-    "![" +
+    "![img-description" +
     selection +
     "](img-url)" +
     textarea.value.substring(textarea.selectionEnd);

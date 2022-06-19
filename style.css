@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 /* styling text area */
+.button-container {
+  margin: 1rem auto;
+  max-width: 600px;
+}
 .textarea {
   max-width: 600px;
   text-align: right;
